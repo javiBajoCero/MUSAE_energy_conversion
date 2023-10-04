@@ -1,6 +1,7 @@
+clc;
+close all;
+clear;
 
-close all
-clear 
 
 Vrms_source=480;%vrms
 Vpeak=Vrms_source*sqrt(2);%vpeak
