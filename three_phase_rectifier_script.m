@@ -12,6 +12,7 @@ source_phase_shiftC=-240;%%degrees
 
 R1=25;%ohms
 L1=50e-3;%Henrios
+C1=1.1281e-3;%Farads
 
 simtime=0.1;%seconds
 number_of_harmonics=30;
