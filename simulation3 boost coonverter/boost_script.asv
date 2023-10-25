@@ -43,6 +43,6 @@ for duty_cycle=0:0.01:1
     grid on;
     title('Power efficiency for all duty cycle D values (non ideal response)');
     xlabel('[duty]'); 
-    ylabel('[%]');
-    scatter(duty_cycle,getdatasamples(out.efficiency,20000),20,"red","+");
+    ylabel('[W]');
+    scatter(duty_cycle,getdatasamples(out.ef,[length(out.tout)]),20,"red","+");
 end
