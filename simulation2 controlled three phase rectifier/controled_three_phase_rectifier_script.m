@@ -15,4 +15,10 @@ alpha1=20;
 alpha_steptime2=0.8;%seconds
 alpha2=50;
 
+continuous_mode_max_alpha=atan(2*pi*gridfreq*Lload/Rload);
+continuous_mode_max_alpha=continuous_mode_max_alpha*180/pi;
+
+limited_by_dc_source_alpha=asen(VDC/Vgrid);
+limited_by_dc_source_alpha=limited_by_dc_source_alpha*180/pi;
+
 out=sim("controled_three_phase_rectifier.slx");
