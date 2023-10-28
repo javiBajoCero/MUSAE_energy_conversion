@@ -13,7 +13,7 @@ f=20e3;     % [Hz]
 D_volt=0.7; % [V]
 duty_cycle=0.7;
 
-sim_time=(1/f)*200;
+sim_time=(1/f)*1000;
 solver_sample_time=(1/f)/100;   % 100 times niquist
 out=sim("boost_simulation.slx");
 
@@ -36,13 +36,13 @@ out=sim("boost_simulation.slx");
 %     scatter(duty_cycle,getdatasamples(out.avg_vo,[length(out.tout)]),20,"red","+");
 % end
 
-%%efficiency D curve
-for duty_cycle=0:0.01:1
-    out=sim("boost_simulation.slx");
-    hold on;
-    grid on;
-    title('Power efficiency for all duty cycle D values (non ideal response)');
-    xlabel('[duty]'); 
-    ylabel('[%]');
-    scatter(duty_cycle,getdatasamples(out.efficiency,20000),20,"red","+");
-end
+% %%efficiency D curve
+% for duty_cycle=0.1:0.1:1
+%     out=sim("boost_simulation.slx");
+%     hold on;
+%     grid on;
+%     title('Power efficiency for all duty cycle D values (non ideal response)');
+%     xlabel('[duty]'); 
+%     ylabel('[%]');
+%     scatter(duty_cycle,getdatasamples(out.efficiency,20000),20,"red","+");
+% end
