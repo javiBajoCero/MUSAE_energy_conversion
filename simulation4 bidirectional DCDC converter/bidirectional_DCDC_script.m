@@ -14,7 +14,7 @@ initial_charged_C1=500; % [V]
 
 f=10e3;      % [Hz]
 
-sim_time=0.9;
+sim_time=0.2*3;
 
 initialD=0.5;
 firstD=0.8;
