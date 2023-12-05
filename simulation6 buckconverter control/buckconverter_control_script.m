@@ -11,7 +11,7 @@ C2=20e-6;%[Farads]
 R_load=200;%[Ohms]
 
 Vgrid_line_line=480;%vrms
-Vgrid_peak=Vgrid_line_line*sqrt(2);%vpeak
+Vgrid_peak=sqrt(2)*Vgrid_line_line/sqrt(3);%vpeak
 
 grid_freq=50;%Hz
 grid_period=1/grid_freq;%[s]
@@ -38,9 +38,13 @@ parasiticR=100;%[Ohms]
 
 consigna_V=500;%[V]
 
-simtime=grid_period*40;%seconds
-solver_sample_time=switching_period/100;
+simtime=grid_period*2;%seconds
+solver_sample_time=switching_period/10;
 
-number_of_harmonics=30;
+s = tf('s');
+planta = ((1/L_buck*C2))*(1)/(s^2 +s/(R_load*C2)+1/(L_buck*C2))
+
+kp=5;
+ki=0.4;
 
 out = sim('buckconverter_control_simulation.slx',simtime);
