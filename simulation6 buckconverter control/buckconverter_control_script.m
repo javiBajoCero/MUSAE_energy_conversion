@@ -38,13 +38,13 @@ parasiticR=100;%[Ohms]
 
 consigna_V=500;%[V]
 
-simtime=grid_period*2;%seconds
+simtime=grid_period*20;%seconds
 solver_sample_time=switching_period/10;
 
 s = tf('s');
 planta = ((1/L_buck*C2))*(1)/(s^2 +s/(R_load*C2)+1/(L_buck*C2))
 
-kp=5;
-ki=0.4;
+kp=0.5;
+ki=100;
 
 out = sim('buckconverter_control_simulation.slx',simtime);
